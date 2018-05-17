@@ -47,7 +47,7 @@ class ControllerBase
 
   # method exposing a `Session` object
   def session
-    Session.new(@req)
+    @session ||= Session.new(@req)
   end
 
   # use this with the router to call action_name (:index, :show, :create...)
